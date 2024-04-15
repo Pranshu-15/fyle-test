@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Tax Calculator</h1>
+    <form id="tax-form">
+      <div class="form-group">
+        <label for="gross-income">Gross Annual Income (₹)</label>
+        <input type="number" id="gross-income" name="grossIncome">
+        <span class="error-icon" data-error="Please enter a valid amount."></span>
+      </div>
+      <div class="form-group">
+        <label for="extra-income">Extra Income (₹) (Optional)</label>
+        <input type="number" id="extra-income" name="extraIncome">
+        <span class="error-icon" data-error="Please enter a valid amount."></span>
+      </div>
+      <div class="form-group">
+        <label for="deductions">Deductions (₹) (Optional)</label>
+        <input type="number" id="deductions" name="deductions">
+        <span class="error-icon" data-error="Please enter a valid amount."></span>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <select id="age" name="age">
+          <option value="">Select Age Group</option>
+          <option value="<40">Less than 40</option>
+          <option value=">=40 & <60">40 to 59</option>
+          <option value=">=60">60 or above</option>
+        </select>
+        <span class="error-icon" data-error="Please select your age group."></span>
+      </div>
+      <button class="btn-submit" type="submit">Submit</button>
+    </form>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Overall Income</h2>
+        <p>After Tax Deduction: <span id="overall-income"></span></p>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
